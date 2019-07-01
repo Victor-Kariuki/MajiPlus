@@ -38,6 +38,9 @@
 ## Tasks
 
 - [ ] Create a User class to define authentication.
+- [ ] Get the customers meter reading.
+- [ ] Caluculate consumption & produce bill
+- [ ] Can process payment
 
 ### Authors 🖊
 

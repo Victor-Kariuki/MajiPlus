@@ -18,9 +18,9 @@ class User {
     };
 
   public:
+    NewUser user;
     void signup() {
       fstream outfile("\nusers.txt", ios::app);
-      NewUser user;
       cout << "Enter firstname: ";
       cin >> user.firstname;
       cout << "Enter lastname: ";
@@ -34,9 +34,14 @@ class User {
       cout << "Enter password: ";
       cin >> user.password;
       outfile << user.firstname << " " << user.lastname << " " << user.email << " " << user.phone_no<< " " << user.id_no << " " << user.password << "\n";
-      cout<<"\n**Successfully Added. Welcome to MajiPlus**\n";
+      cout<<"\n** Successfully Added. Welcome to MajiPlus **\n";
       outfile.close();
     };
+
+    std::string getUsername() {
+      return user.firstname + " " + user.lastname;
+    };
+
     void login() {
       std::string email;
       std::string password;

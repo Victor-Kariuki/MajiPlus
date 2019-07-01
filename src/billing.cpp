@@ -12,7 +12,7 @@ class Billing {
   public:
 
     void caluclateBill(int category_no) {
-      cout << "\nEnter the meter reading: \n";
+      cout << "\nEnter the meter reading: ";
       cin >> meter_reading;
 
       switch (category_no)
