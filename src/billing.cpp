@@ -36,25 +36,60 @@ class Billing {
 
       case 2:
         /* code */
+        if (meter_reading >= 0 && meter_reading <= 6) {
+          cout << "\nYour current bill is Ksh " << meter_reading * 69.33 << "\n";
+        } else if (meter_reading >= 7 && meter_reading <= 20) {
+          cout << "Your current bill is Ksh " << meter_reading * 104 << "\n";
+        } else if (meter_reading >= 21 && meter_reading <= 50) {
+          cout << "Your current bill is Ksh " << meter_reading * 135.2 << "\n";
+        } else if (meter_reading >= 51 && meter_reading <= 100) {
+          cout << "Your current bill is Ksh " << meter_reading * 166.4 << "\n";
+        } else if (meter_reading >= 100 && meter_reading <= 300) {
+          cout << "Your current bill is Ksh " << meter_reading * 208 << "\n";
+        } else {
+          cout << "Your current bill is Ksh " << meter_reading * 208 << "\n";
+        }
         break;
 
       case 3:
         /* code */
+        if (meter_reading >= 0 && meter_reading <= 6) {
+          cout << "\nYour current bill is Ksh " << meter_reading * 69.33 << "\n";
+        } else if (meter_reading >= 7 && meter_reading <= 20) {
+          cout << "Your current bill is Ksh " << meter_reading * 104 << "\n";
+        } else if (meter_reading >= 21 && meter_reading <= 50) {
+          cout << "Your current bill is Ksh " << meter_reading * 135.2 << "\n";
+        } else if (meter_reading >= 51 && meter_reading <= 100) {
+          cout << "Your current bill is Ksh " << meter_reading * 166.4 << "\n";
+        } else if (meter_reading >= 100 && meter_reading <= 300) {
+          cout << "Your current bill is Ksh " << meter_reading * 208 << "\n";
+        } else {
+          cout << "Your current bill is Ksh " << meter_reading * 208 << "\n";
+        }
         break;
 
       case 4:
         /* code */
+        if (meter_reading >= 0 && meter_reading <= 600) {
+          cout << "\nYour current bill is Ksh " << meter_reading * 40 << "\n";
+        } else if (meter_reading >= 601 && meter_reading <= 1200) {
+          cout << "Your current bill is Ksh " << meter_reading * 50 << "\n";
+        } else {
+          cout << "Your current bill is Ksh " << meter_reading * 90 << "\n";
+        }
         break;
 
       case 5:
-        /* code */
+        cout << "Your current bill is Ksh " << meter_reading * 35 << "\n";
         break;
 
       case 6:
         /* code */
+        cout << "\nYour current bill is Ksh " << meter_reading * 1.5 << "\n";
         break;
 
       default:
+        cout << "\n Wrong cateogry";
         break;
       }
     }

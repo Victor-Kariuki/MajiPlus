@@ -3,13 +3,6 @@
 #include "category.cpp"
 #include "billing.cpp"
 
-
-void userRegistration(int category_no) {
-
-
-
-}
-
 void billUser(int category_no) {
   Billing bill;
   bill.caluclateBill(category_no);
