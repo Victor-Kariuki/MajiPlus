@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include <ctime>
 #include <iostream>
-#include <fstream>
 #include<stdio.h>
 
 using namespace std;
@@ -35,13 +34,6 @@ class User {
       cout << "Enter password: ";
       cin >> user.password;
 
-      fstream file;
-      file.open("users.dat", ios::binary|ios::in);
-      if(!file){
-        cout<<"Error in creating file...\n";
-      }
-      file.write((char*)&user,sizeof(user));
-      file.close();
       cout<<"\n** Successfully Added. Welcome to MajiPlus **\n";
     };
 
