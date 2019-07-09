@@ -29,6 +29,9 @@ int main(int argc, char const *argv[])
     user.login();
   } else if (userChoice == 2) {
     user.signup();
+    cout << "\n Weclome to Maji Plus\nPlease login to confirm your credentials";
+    user.login();
+    cout << user.generateCredentials();
     cout << "\nHi "<< user.getUsername() <<", Welcome to MajiPlus\nHere is a list of customer categories: - \n";
     cout << "\n1) Residential Household \n2) Commercial/Industrial \n3) Government Institutions" <<
     "\n4) Schools and Colleges \n5) Water Kiosks \n6) Resale at Water Kiosk\n";

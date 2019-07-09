@@ -16,7 +16,7 @@
 
 ```bash
   make || g++ -o build/main src/main.cpp
-  .\build\main
+  ./build/main
 ```
 
 ## Features

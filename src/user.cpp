@@ -1,7 +1,8 @@
 #include <stdlib.h>
-#include <iostream>
 #include <ctime>
+#include <iostream>
 #include <fstream>
+#include<stdio.h>
 
 using namespace std;
 
@@ -15,12 +16,12 @@ class User {
       std::string id_no;
       std::string password;
       std::string reg_no;
+      std::string meter_no;
     };
 
   public:
     NewUser user;
     void signup() {
-      fstream outfile("\nusers.txt", ios::app);
       cout << "Enter firstname: ";
       cin >> user.firstname;
       cout << "Enter lastname: ";
@@ -33,23 +34,51 @@ class User {
       cin >> user.id_no;
       cout << "Enter password: ";
       cin >> user.password;
-      outfile << user.firstname << " " << user.lastname << " " << user.email << " " << user.phone_no<< " " << user.id_no << " " << user.password << "\n";
+
+      fstream file;
+      file.open("users.dat", ios::binary|ios::in);
+      if(!file){
+        cout<<"Error in creating file...\n";
+      }
+      file.write((char*)&user,sizeof(user));
+      file.close();
       cout<<"\n** Successfully Added. Welcome to MajiPlus **\n";
-      outfile.close();
     };
 
     std::string getUsername() {
       return user.firstname + " " + user.lastname;
     };
 
+    std::string getPassword() {
+      return user.password;
+    };
+
+    std::string getEmail() {
+      return user.email;
+    }
+
+    std::string generateCredentials() {
+      time_t now = time(0);
+      char* dt = ctime(&now);
+      return dt;
+    }
+
     void login() {
+      int tries = 0;
       std::string email;
       std::string password;
 
-      cout << "\n Enter user email: \n";
-      cin >> email;
+      while (tries < 3 && email != getEmail() && password != getPassword())
+      {
+        cout << "\n Wrong credentials please try again";
+        cout << "\nEnter your email: \n";
+        cin >> email;
+        cout << "Enter your password: ";
+        cin >> password;
+        tries ++;
+      }
+      cout << "Successfully Logged in";
 
-      NewUser user;
     };
 
     int logout() {
